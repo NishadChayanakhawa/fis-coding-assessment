@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>io.github.nishadchayanakhawa</groupId>
+	<artifactId>fis-coding-assessment</artifactId>
+	<version>1.0.0</version>
+	<name>FIS Coding Assessment</name>
+	<description>FIS Coding Assessment</description>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>
+			scm:git:git://github.com/NishadChayanakhawa/fis-coding-assessment.git</connection>
+		<developerConnection>
+			scm:git:ssh://github.com:NishadChayanakhawa/fis-coding-assessment.git</developerConnection>
+		<url>https://github.com/NishadChayanakhawa/fis-coding-assessment</url>
+	</scm>
+
+	<developers>
+		<developer>
+			<name>Nishad Chayanakhawa</name>
+			<email>nishad.chayanakhawa@gmail.com</email>
+			<organization>io.nishadc</organization>
+			<organizationUrl>https://github.com/NishadChayanakhawa/</organizationUrl>
+		</developer>
+	</developers>
+
+	<build>
+		<plugins>
+			<!-- Maven Compiler Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.encoding}</encoding>
+				</configuration>
+			</plugin>
+			<!-- Surefire plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven-surefire-plugin.version}</version>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+			<!--
+			https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-failsafe-plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>${maven-failsafe-plugin.version}</version>
+				<configuration>
+					<suiteXmlFiles>testng.xml</suiteXmlFiles>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<dependencies>
+		<!--
+		https://mvnrepository.com/artifact/io.github.nishadchayanakhawa/testng-customization -->
+		<dependency>
+			<groupId>io.github.nishadchayanakhawa</groupId>
+			<artifactId>testng-customization</artifactId>
+			<version>${automation-framework-version}</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<properties>
+		<maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+		<maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
+		<maven-failsafe-plugin.version>3.5.2</maven-failsafe-plugin.version>
+		<automation-framework-version>2.2.1</automation-framework-version>
+		<java.version>17</java.version>
+		<project.encoding>UTF-8</project.encoding>
+	</properties>
+</project>
