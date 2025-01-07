@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="FIS assessment test suite">
+	<listeners>
+		<listener
+			class-name="io.nishadc.automationtestingframework.testngcustomization.ReportGenerator"></listener>
+		<listener
+			class-name="io.nishadc.automationtestingframework.testngcustomization.ExecutionController"></listener>
+	</listeners>
+	<test name="Web ui tests">
+		<classes>
+			<class
+				name="io.github.nishadchayanakhawa.fiscodingassessment.tests.web.EBayIT" />
+		</classes>
+	</test>
+	<test name="API tests">
+		<classes>
+			<class
+				name="io.github.nishadchayanakhawa.fiscodingassessment.tests.api.CoinDeskIT" />
+		</classes>
+	</test>
+</suite>
